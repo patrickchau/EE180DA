@@ -1,10 +1,12 @@
 import numpy as numpy
 import cv2
 
+
+## first we record the video frame by frame
 cap = cv2.VideoCapture(0)
 rows = 75;
 columns = 75;
-out = cv2.VideoWriter('outpy.avi',cv2.VideoWriter_fourcc('M','J','P','G'), 10, (int(cap.get(3)), int(cap.get(4))), 0)
+out = cv2.VideoWriter('outpy.avi',cv2.VideoWriter_fourcc('M','J','P','G'), 10, (int(cap.get(3)), int(cap.get(4)))   )
 
 while(True):
     # Capture frame-by-frame
@@ -20,17 +22,11 @@ while(True):
     else:
     	break
 
-#ret, frame = cap.read()
-#gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-#cv2.imshow('frame', gray)
-#cv2.imwrite('./test2.png', gray)
-#img = cv2.imread('./test2.png', cv2.IMREAD_UNCHANGED)
-#resized = cv2.resize(img, (rows, columns), interpolation = cv2.INTER_AREA)
-#cv2.imwrite('./test.png', resized)
-
 cap.release()
 out.release()
 cv2.destroyAllWindows()
+
+
 
 
 cap = cv2.VideoCapture('outpy.avi')
@@ -56,18 +52,5 @@ while(cap.isOpened()):
   else: 
     break
 
-#scale = "@%#*+=-:. " # 10 levels of grayscale
-#file = "file_name.txt"
-
-#grayscale = cv2.imread("test.png", 0)
-#for x in grayscale:
-#	for y in x:
-#		f = open(file, 'a')
-#		f.write( scale[y//26] )
-#		f.close()
-#	f = open(file, 'a')
-#	f.write( "\n" )
-#	f.close()
-#
 
 
